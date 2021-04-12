@@ -1,20 +1,26 @@
 :root {
-    --main: #000000;
+    --main: rgb(24,24,24);
     --secondary: #ffffff;
     --background: #6E6E6E;
-    --playerProgress: #CFCFCF;
+    --playerSecondary: #CFCFCF;
+    --playerProgress: 0%;
 }
 body {
-    width: 15rem;
+    width: 18rem;
     height: auto;
-    background: var(--main);
     margin: 0;
+    background: var(--main);
+    font-family: 'Quicksand', sans-serif;
 }
-p {
+span {
     color: var(--secondary);
     width: auto;
     margin-left: 2.5%;
 }
+/*.text-slide {
+    animation: 20s slidein-left;
+}*/
+
 .player-buttons {
     display: flex;
     width:95%;
@@ -22,10 +28,15 @@ p {
     margin-left: auto;
     margin-right: auto;
 }
-.player-buttons i {
-    color: var(--playerProgress);
+.player-buttons button {
+    width: auto;
+    height: auto;
+    border: none;
+    padding: 0;
+    background: none;
+    color: var(--playerSecondary);
 }
-.player-buttons i:nth-child(4) {
+.player-buttons button:nth-child(4) {
     margin-left: auto;
 }
 .progress-bar {
@@ -36,8 +47,8 @@ p {
     border-radius: 20px;
 }
 .progress-bar > div {
-    background: var(--playerProgress);
-    width: 40%;
+    background: var(--playerSecondary);
+    width: var(--playerProgress);
     height: .55rem;
     border-radius: 20px;
 }

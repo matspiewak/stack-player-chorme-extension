@@ -6,8 +6,22 @@
     "background": {
       "service_worker": "background.js"
     },
-    "permissions": ["storage", "activeTab", "scripting"],
+    "content_scripts":[
+      {
+        "matches":["<all_urls>"],
+        "js":["contentScript.js"]
+      }
+    ],
+    "permissions": ["storage", "tabs", "scripting"],
     "action": {
       "default_popup": "popup.html"
+    },
+    "commands": {
+      "openYouTue": {
+        "suggested_key": {
+          "default":"Alt+Shift+Y"
+        },
+        "description": "New YouTube Page"
+      }
     }
   }
